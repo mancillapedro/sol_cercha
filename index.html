@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <title>Cercha curso soldadura</title>
+
+    <head>
+        <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    </head>
+</head>
+
+<body>
+    <a-scene
+        embedded
+        arjs='
+            sourceType: webcam;
+            debugUIEnabled: false;
+            detectionMode: mono_and_matrix;
+            matrixCodeType: 3x3;
+        '
+    >
+        <a-assets>
+            <a-asset-item
+                id="cercha"
+                src="./assets/Sintitulo.gltf"
+            ></a-asset-item>
+        </a-assets>
+
+        <a-marker
+            type='barcode'
+            value='22'
+        >
+            <a-entity
+                id="cercha-entidad"
+                gltf-model="#cercha"
+                scale="0.001 0.001 0.001"
+                rotation="-90 0 0"
+                position="-0.5 0 -1"
+            ></a-entity>
+        </a-marker>
+        <a-entity
+            id="otra-camara"
+            camera
+        ></a-entity>
+    </a-scene>
+</body>
+
+</html>
