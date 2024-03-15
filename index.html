@@ -33,12 +33,24 @@
             value='22'
         >
             <a-entity
-                id="cercha-entidad"
-                gltf-model="#cercha"
-                scale="1 1 1"
-                rotation="0 0 0"
-                position="-500 -2000 -1500"
-            ></a-entity>
+                position="0 0 0"
+                animation="
+                    property: rotation;
+                    to: 0 360 0;
+                    loop: true;
+                    easing: linear;
+                    dur: 5000
+                    "
+            >
+                <a-entity
+                    gltf-model="#cercha"
+                    position="-0.5 0 0.5"
+                    rotation="-90 -0 0"
+                    animation-mixer
+                    scale="0.001 0.001 0.001"
+                    id="cercha_entidad"
+                ></a-entity>
+            </a-entity>
         </a-marker>
         <a-entity camera></a-entity>
     </a-scene>
